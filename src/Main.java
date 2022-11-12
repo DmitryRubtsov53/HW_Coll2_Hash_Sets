@@ -1,4 +1,5 @@
-import java.util.ArrayList;
+import java.awt.*;
+import java.util.*;
 
 public class Main {
 
@@ -30,14 +31,39 @@ public class Main {
 //        addProduct(basket, tea1);
 //        printProduct(basket);
         System.out.println();
-        basket.remove(vodka);
+        removeProduct(basket);   // Идея почему-то ругается !
         printProduct(basket);
 
 
-
-
     } // main ----------------------------------------------------------------------
-
+    public static void removeProduct (ArrayList<Product> basket) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите название товара на русском(с большой буквы), который уже куплен.");
+        String p = scanner.nextLine();
+        Iterator<Product> iter = basket.iterator();
+        while(iter.hasNext()) {
+            Product next = iter.next();
+            if (p.equals(next.getProdName())) {
+                next.setSold(true);
+                System.out.println("Следующий товар куплен и будет удалён из корзины: " + "\n" + next);
+                iter.remove();
+                scanner.close();
+            }
+        }
+    }
+//    public static void removeProduct (ArrayList<Product> basket) {
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Введите название товара на русском(с большой буквы), который уже куплен.");
+//        String p = scanner.nextLine();
+//        for (Product el : basket) {
+//            if (p.equals(el.getProdName())) {
+//                el.setSold(true);
+//                System.out.println("Следующий товар куплен и будет удалён из корзины: " + "\n" + el);
+//                basket.remove(el);
+//                scanner.close();
+//            }
+//        }                 // Идея почему-то ругается !
+//    }
     public static void addProduct(ArrayList<Product> basket, Product product) {
 
         for (int j = 0; j < basket.size(); j++) {
@@ -50,7 +76,6 @@ public class Main {
                 }
         }
     }
-
     public static void printProduct (ArrayList<Product> basket) {
         System.out.println("В корзине " + basket.size() + " продуктов:" );
         for (Product el : basket) {
