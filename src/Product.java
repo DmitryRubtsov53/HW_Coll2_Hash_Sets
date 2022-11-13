@@ -21,7 +21,7 @@ public class Product {
     public double getAmount() {return amount;
     }
 
- public boolean isSold() { return sold;
+    public boolean isSold() { return sold;
     }
 
 // setters ----------------------------------------------------------------------
