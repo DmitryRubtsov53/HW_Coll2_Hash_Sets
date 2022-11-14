@@ -4,9 +4,9 @@ import java.util.Random;
 
 public class SetInt {
 
-    public static final int COUNT = 20;
+    private static final int COUNT = 20;
     public static ArrayList <SetInt> integers;
-    public int number;
+    private final int number;
 
     public SetInt(int number) { this.number = number;
     }
