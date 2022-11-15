@@ -10,9 +10,10 @@ public class Recipe {
         //super(prodName, cost, amount, sold);
         this.recipeName = recipeName;
         this.products = products;
-        for (int i = 0; i < products.size(); i++) {
-            sumCostProd += products.get(i).getCost();
-        }
+        sumCostProd =sumCostProd;
+//        for (int i = 0; i < products.size(); i++) {
+//            sumCostProd += products.get(i).getCost();
+//        }
     }
 
  // getters -----------------------------------------------------------------------------
@@ -23,9 +24,6 @@ public class Recipe {
         return recipeName;
     }
     public static double getSumCostProd() {
-//        for (int i = 0; i < products.size() + 1; i++) {
-//            sumCostProd += products.get(i).getCost();
-//        }
         return sumCostProd;
     }
 

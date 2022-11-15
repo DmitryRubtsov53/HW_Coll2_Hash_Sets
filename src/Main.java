@@ -1,4 +1,3 @@
-import java.awt.*;
 import java.util.*;
 
 public class Main {
@@ -49,8 +48,8 @@ public class Main {
         addProduct(basket, vodka);
         printProduct(basket);
 
-        addProduct(basket, tea1);  // Добавление с целью проверки срабатывания исключения на одинаковые объекты.
-        printProduct(basket);
+//        addProduct(basket, tea1);  // Добавление с целью проверки срабатывания исключения на одинаковые объекты.
+//        printProduct(basket);
 
         System.out.println();
         removeProduct(basket);
@@ -74,6 +73,7 @@ public class Main {
             }
         }
     }
+
     public static void removeProduct (ArrayList<Product> basket) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите название товара на русском(с большой буквы), который уже куплен.");
@@ -102,6 +102,7 @@ public class Main {
                 }
         }
     }
+
     public static void printProduct (ArrayList<Product> basket) {
         System.out.println("В корзине " + basket.size() + " продуктов:" );
         for (Product el : basket) {
